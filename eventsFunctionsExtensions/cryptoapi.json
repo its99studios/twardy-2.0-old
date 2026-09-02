@@ -1,0 +1,155 @@
+{
+  "author": "",
+  "category": "Advanced",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Crypto Api",
+  "gdevelopVersion": ">=5.5.222",
+  "helpPath": "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXNoaWVsZC1rZXkiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIsOEExLDEgMCAwLDEgMTMsOUExLDEgMCAwLDEgMTIsMTBBMSwxIDAgMCwxIDExLDlBMSwxIDAgMCwxIDEyLDhNMjEsMTFDMjEsMTYuNTUgMTcuMTYsMjEuNzQgMTIsMjNDNi44NCwyMS43NCAzLDE2LjU1IDMsMTFWNUwxMiwxTDIxLDVWMTFNMTIsNkEzLDMgMCAwLDAgOSw5QzksMTAuMzEgOS44MywxMS40MiAxMSwxMS44M1YxOEgxM1YxNkgxNVYxNEgxM1YxMS44M0MxNC4xNywxMS40MiAxNSwxMC4zMSAxNSw5QTMsMyAwIDAsMCAxMiw2WiIgLz48L3N2Zz4=",
+  "name": "CryptoApi",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/fac7ecb74ef7da92ab59c3e431fb9587c105c2889a41cfac489135c0eb4643d1_shield-key.svg",
+  "shortDescription": "Random number generator for integers and floats using the Crypto API.",
+  "version": "1.0.0",
+  "description": [
+    "This uses the Crypto API to create a random number see help for more details. ",
+    "",
+    "You might ask how this differs from the built-in random functions in GDevelop like RandomInRange. In basic terms, it provides a more random number than Math.random() which is what the built-in functions use.",
+    "That randomness does come at a cost of performance so be aware of your usage of this. ",
+    "",
+    "**This has nothing to do with crypto currency**"
+  ],
+  "origin": {
+    "identifier": "CryptoApi",
+    "name": "gdevelop-extension-store"
+  },
+  "tags": [
+    "random",
+    "crypto",
+    "math"
+  ],
+  "authorIds": [],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "description": "Uses the Crypto API to create a longer random number in an integer range.",
+      "fullName": "Random In Range",
+      "functionType": "Expression",
+      "name": "RandomInRange",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const minParam = eventsFunctionContext.getArgument(\"Minimum\");",
+            "const maxParam = eventsFunctionContext.getArgument(\"Maximum\");",
+            "",
+            "/**",
+            " * inclusive means in a range of 1-10 it includes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ",
+            " * exclusive would be 1, 2, 3, 4, 5, 6, 7, 8, 9 ",
+            " * @min: Min value to be returned (inclusive)",
+            " * @max: Max value to be returned (inclusive)",
+            " */",
+            "const getRandomNum = (min, max) => {",
+            "    const randomArraryBuffer = new Uint32Array(1);",
+            "    crypto.getRandomValues(randomArraryBuffer);",
+            "    const randomNum = randomArraryBuffer[0] / (0xffffffff + 1);",
+            "",
+            "    min = Math.ceil(min);",
+            "    max = Math.floor(max);",
+            "    return Math.floor(randomNum * (max - min + 1)) + min;",
+            "}",
+            "",
+            "eventsFunctionContext.returnValue = getRandomNum(minParam, maxParam);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Minimum Value ",
+          "name": "Minimum",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum Value ",
+          "name": "Maximum",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Uses the Crypto API to create a longer random number in an float range.",
+      "fullName": "Random Float In Range",
+      "functionType": "Expression",
+      "name": "RandomFloatInRange",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const minParam = eventsFunctionContext.getArgument(\"Minimum\");",
+            "const maxParam = eventsFunctionContext.getArgument(\"Maximum\");",
+            "",
+            "/**",
+            " * @min: Min value to be returned (inclusive)",
+            " * @max: Max value to be returned (inclusive)",
+            " */",
+            "const getRandomNumFloat = (min, max) => {",
+            "",
+            "    const randomArraryBuffer = new Uint32Array(1);",
+            "    crypto.getRandomValues(randomArraryBuffer);",
+            "    const randomNum = randomArraryBuffer[0] / (0xffffffff + 1);",
+            "",
+            "    min = Math.ceil(min);",
+            "    max = Math.floor(max);",
+            "    return randomNum * (max - min + 1) + min;",
+            "}",
+            "",
+            "eventsFunctionContext.returnValue = getRandomNumFloat(minParam, maxParam) || 0;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Minimum Value ",
+          "name": "Minimum",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum Value ",
+          "name": "Maximum",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "functionName": "RandomInRange"
+      },
+      {
+        "functionName": "RandomFloatInRange"
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

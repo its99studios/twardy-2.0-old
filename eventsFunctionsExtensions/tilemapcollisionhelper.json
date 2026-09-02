@@ -1,0 +1,162 @@
+{
+  "author": "",
+  "category": "General",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Tilemap Collision Helper",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLW1hcCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xNSwxOUw5LDE2Ljg5VjVMMTUsNy4xMU0yMC41LDNDMjAuNDQsMyAyMC4zOSwzIDIwLjM0LDNMMTUsNS4xTDksM0wzLjM2LDQuOUMzLjE1LDQuOTcgMyw1LjE1IDMsNS4zOFYyMC41QTAuNSwwLjUgMCAwLDAgMy41LDIxQzMuNTUsMjEgMy42MSwyMSAzLjY2LDIwLjk3TDksMTguOUwxNSwyMUwyMC42NCwxOS4xQzIwLjg1LDE5IDIxLDE4Ljg1IDIxLDE4LjYyVjMuNUEwLjUsMC41IDAgMCwwIDIwLjUsM1oiIC8+PC9zdmc+",
+  "name": "TilemapCollisionHelper",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/69a1ca84fc3a971e175dcbde59f0dd6cc44432fb7f20d137c015b9cc45a76fbc_map.svg",
+  "shortDescription": "Utilities for tilemap collision.",
+  "version": "1.0.0",
+  "description": "",
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "fullName": "Tile of object in collision",
+      "functionType": "Condition",
+      "name": "TileOfObjectInCollision",
+      "sentence": "The tile id in _PARAM1_ at _PARAM2_ coordinates = _PARAM3_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TileMap::SimpleTileMap::TileIdAtPosition"
+              },
+              "parameters": [
+                "Tilemap",
+                "=",
+                "Tile",
+                "Object.X()",
+                "Object.Y()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Tilemap object",
+          "name": "Tilemap",
+          "supplementaryInformation": "TileMap::SimpleTileMap",
+          "type": "objectList"
+        },
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "Tile ID",
+          "name": "Tile",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Tile range of object in collision",
+      "functionType": "Condition",
+      "name": "TileRangeOfObjectInCollision",
+      "sentence": "The tile id in _PARAM1_ at _PARAM2_ coordinates is in range _PARAM3_ to _PARAM4_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TileMap::SimpleTileMap::TileIdAtPosition"
+              },
+              "parameters": [
+                "Tilemap",
+                ">=",
+                "MinTile",
+                "Object.X()",
+                "Object.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "TileMap::SimpleTileMap::TileIdAtPosition"
+              },
+              "parameters": [
+                "Tilemap",
+                "<=",
+                "MaxTile",
+                "Object.X()",
+                "Object.Y()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Tilemap object",
+          "name": "Tilemap",
+          "supplementaryInformation": "TileMap::SimpleTileMap",
+          "type": "objectList"
+        },
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "Minimum tile ID",
+          "name": "MinTile",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum tile ID",
+          "name": "MaxTile",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "functionName": "TileOfObjectInCollision"
+      },
+      {
+        "functionName": "TileRangeOfObjectInCollision"
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

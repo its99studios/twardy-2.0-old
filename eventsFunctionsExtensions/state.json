@@ -1,0 +1,839 @@
+{
+  "author": "",
+  "category": "Game mechanic",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "State",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXJlY3ljbGUtdmFyaWFudCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik03LjE3IDcuOTFMOC45IDguOTFMMTIuMDggMy40MkwxNC4zMyA3LjMxTDExLjczIDguODFMMTcuMTkgMTAuMjdMMTguNjYgNC44MUwxNi4wNiA2LjMxTDEzLjgxIDIuNDFDMTMuMjYgMS40NSAxMi4wMyAxLjEyIDExLjA4IDEuNjhDMTAuODEgMS44MyAxMC41OCAyLjA1IDEwLjQxIDIuMzFNMTAgMjBWMThMMy42NiAxOEw1LjkgMTQuMUw4LjUgMTUuNkw3LjA0IDEwLjE0TDEuNTcgMTEuNkw0LjE3IDEzLjFMMS45MiAxN0MxLjM3IDE3Ljk2IDEuNyAxOS4xOCAyLjY1IDE5LjczQzIuOTIgMTkuODkgMy4yMiAxOS45NyAzLjU0IDIwTTE5LjA2IDExLjVMMTcuMzIgMTIuNUwyMC41IDE4SDE2VjE1TDEyIDE5TDE2IDIzVjIwSDIwLjVDMjEuNjEgMjAgMjIuNSAxOS4xMSAyMi41IDE4QzIyLjUgMTcuNjkgMjIuNDIgMTcuMzggMjIuMjggMTcuMTFaIiAvPjwvc3ZnPg==",
+  "name": "State",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/cf1dac50fe299483499ad111369bef0c070cd0b20a6561649d72a65776653d9d_recycle-variant.svg",
+  "shortDescription": "Add states to objects.",
+  "version": "1.1.0",
+  "description": "",
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "eventsBasedBehaviors": [
+    {
+      "description": "States for sprites.",
+      "fullName": "Sprite States",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "SpriteStates",
+      "objectType": "Sprite",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "Change current state",
+          "functionType": "Action",
+          "name": "SetCurrentState",
+          "sentence": "Change _PARAM0_ to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "State::SpriteStates::NameInStateList"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "DesiredState",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "CurrentState",
+                    "=",
+                    "DesiredState"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            },
+            {
+              "description": "State name",
+              "name": "DesiredState",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Check current state",
+          "functionType": "Condition",
+          "name": "CheckCurrentState",
+          "sentence": "_PARAM0_ is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "DesiredState",
+                    "=",
+                    "CurrentState"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            },
+            {
+              "description": "State name",
+              "name": "DesiredState",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Current state",
+          "functionType": "StringExpression",
+          "name": "GetCurrentState",
+          "sentence": "Change _PARAM0_ to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "CurrentState"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "string"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Check name in state list",
+          "functionType": "Condition",
+          "name": "NameInStateList",
+          "sentence": "_PARAM0_ state list contains _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName1",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName2",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName3",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName4",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName5",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName6",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName7",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName8",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "SName9",
+                        "=",
+                        "QuestionedState"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            },
+            {
+              "description": "State name",
+              "name": "QuestionedState",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onCreated",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "State::SpriteStates::SetCurrentState"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "SName1",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Pick a random state",
+          "functionType": "Action",
+          "name": "PickRandomState",
+          "sentence": "Randomize state of _PARAM0_ up to _PARAM2_ (Idle included: _PARAM3_)",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IncludeIdle",
+                    "=",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "CurrentState",
+                    "=",
+                    "Object.Behavior::NameOfState(RandomInRange(2, MaximumState))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IncludeIdle",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "CurrentState",
+                    "=",
+                    "Object.Behavior::NameOfState(RandomInRange(1, MaximumState))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            },
+            {
+              "description": "Highest State number",
+              "name": "MaximumState",
+              "type": "expression"
+            },
+            {
+              "defaultValue": "no",
+              "description": "Include Idle",
+              "name": "IncludeIdle",
+              "optional": true,
+              "type": "yesorno"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Get name of state",
+          "functionType": "StringExpression",
+          "name": "NameOfState",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName4"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName6"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "7"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName7"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "8"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName8"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuestionedState",
+                    "=",
+                    "9"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "SName9"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "string"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "State::SpriteStates",
+              "type": "behavior"
+            },
+            {
+              "description": "State number",
+              "name": "QuestionedState",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "functionName": "onCreated"
+          },
+          {
+            "functionName": "SetCurrentState"
+          },
+          {
+            "functionName": "NameInStateList"
+          },
+          {
+            "functionName": "NameOfState"
+          },
+          {
+            "functionName": "CheckCurrentState"
+          },
+          {
+            "functionName": "GetCurrentState"
+          },
+          {
+            "functionName": "PickRandomState"
+          }
+        ]
+      },
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 1 name",
+          "name": "SName1"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 2 name",
+          "name": "SName2"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 3 name",
+          "name": "SName3"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 4 name",
+          "name": "SName4"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 5 name",
+          "name": "SName5"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 6 name",
+          "name": "SName6"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 7 name",
+          "name": "SName7"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 8 name",
+          "name": "SName8"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "State 9 name",
+          "name": "SName9"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Current state",
+          "hidden": true,
+          "name": "CurrentState"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "SName1"
+          },
+          {
+            "propertyName": "SName2"
+          },
+          {
+            "propertyName": "SName3"
+          },
+          {
+            "propertyName": "SName4"
+          },
+          {
+            "propertyName": "SName5"
+          },
+          {
+            "propertyName": "SName6"
+          },
+          {
+            "propertyName": "SName7"
+          },
+          {
+            "propertyName": "SName8"
+          },
+          {
+            "propertyName": "SName9"
+          },
+          {
+            "propertyName": "CurrentState"
+          }
+        ]
+      }
+    }
+  ],
+  "eventsBasedObjects": []
+}

@@ -1,0 +1,110 @@
+{
+  "author": "",
+  "category": "Advanced",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Game Properties Events",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXRhYmxlLXNldHRpbmdzIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTcsMjJIOVYyNEg3VjIyTTExLDIySDEzVjI0SDExVjIyTTE1LDIySDE3VjI0SDE1VjIyTTUsNEgxOUEyLDIgMCAwLDEgMjEsNlYxOEEyLDIgMCAwLDEgMTksMjBINUEyLDIgMCAwLDEgMywxOFY2QTIsMiAwIDAsMSA1LDRNNSw4VjEySDExVjhINU0xMyw4VjEySDE5VjhIMTNNNSwxNFYxOEgxMVYxNEg1TTEzLDE0VjE4SDE5VjE0SDEzWiIgLz48L3N2Zz4=",
+  "name": "GamePropertiesEvents",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/49a395094372335afff24260ca5a3f5b9bf89b595fbf856c8b77850a1654d845_table-settings.svg",
+  "shortDescription": "Events for the Game Properties data extension.",
+  "version": "1.0.0",
+  "description": "",
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [
+    {
+      "name": "Version",
+      "type": "string",
+      "value": "0"
+    }
+  ],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "fullName": "Game version contains string",
+      "functionType": "Condition",
+      "name": "VersionContainsString",
+      "sentence": "Game version contains _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "Version",
+                "contains",
+                "String"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "String",
+          "name": "String",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "name": "onFirstSceneLoaded",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Version",
+                "=",
+                "GetPropertiesData::ReturnGameVersion()"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "functionName": "VersionContainsString"
+      },
+      {
+        "functionName": "onFirstSceneLoaded"
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

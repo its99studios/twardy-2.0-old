@@ -1,0 +1,769 @@
+{
+  "author": "",
+  "category": "Game mechanic",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "IDs",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWRhdGFiYXNlLXNlYXJjaC1vdXRsaW5lIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTExIDE4Ljk1QzcuNzcgMTguNzIgNiAxNy40NSA2IDE3VjE0Ljc3QzcuMTMgMTUuMzIgOC41IDE1LjY5IDEwIDE1Ljg3QzEwIDE1LjIxIDEwLjA0IDE0LjU0IDEwLjIxIDEzLjg5QzguNSAxMy42NyA2Ljk3IDEzLjE2IDYgMTIuNDVWOS42NEM3LjQzIDEwLjQ1IDkuNSAxMC45NyAxMS44MiAxMUMxMS44NSAxMC45NyAxMS44NyAxMC45MyAxMS45IDEwLjlDMTQuMSA4LjcxIDE3LjUgOC40MSAyMCAxMC4wM1Y3QzIwIDQuNzkgMTYuNDIgMyAxMiAzUzQgNC43OSA0IDdWMTdDNCAxOS4yMSA3LjU5IDIxIDEyIDIxQzEyLjM0IDIxIDEyLjY4IDIxIDEzIDIwLjk3QzEyLjYyIDIwLjcyIDEyLjI0IDIwLjQ0IDExLjkgMjAuMUMxMS41NSAxOS43NCAxMS4yNSAxOS4zNiAxMSAxOC45NU0xMiA1QzE1Ljg3IDUgMTggNi41IDE4IDdTMTUuODcgOSAxMiA5IDYgNy41IDYgNyA4LjEzIDUgMTIgNU0yMC4zMSAxNy45QzIwLjc1IDE3LjIxIDIxIDE2LjM4IDIxIDE1LjVDMjEgMTMgMTkgMTEgMTYuNSAxMVMxMiAxMyAxMiAxNS41IDE0IDIwIDE2LjUgMjBDMTcuMzcgMjAgMTguMTkgMTkuNzUgMTguODggMTkuMzJMMjIgMjIuMzlMMjMuMzkgMjFMMjAuMzEgMTcuOU0xNi41IDE4QzE1LjEyIDE4IDE0IDE2Ljg4IDE0IDE1LjVTMTUuMTIgMTMgMTYuNSAxMyAxOSAxNC4xMiAxOSAxNS41IDE3Ljg4IDE4IDE2LjUgMThaIiAvPjwvc3ZnPg==",
+  "name": "IDs",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/910b853cf17af2349c0d2301e6c317675207f25c7313906864b1809c0d34dabf_database-search-outline.svg",
+  "shortDescription": "A numeric ID system to manage object and item data across multiple sprites.",
+  "version": "2.1.0",
+  "description": [
+    "This extension provides a centralized database for all items in Twardy 2.0. It allows you to:",
+    "",
+    "* Define item properties (Name, Weight, Type, etc.) in a single Structure variable.",
+    "",
+    "* Use a Behavior to \"tag\" any sprite with a specific Item ID.",
+    "",
+    "* Automatically sync animations based on the ID.",
+    "",
+    "* Use Expressions to fetch data for UI, tooltips, and inventory logic without hardcoding values in every event."
+  ],
+  "tags": [
+    "items",
+    "database",
+    "id system",
+    "inventory",
+    "structure",
+    "data"
+  ],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [
+    {
+      "name": "ItemData",
+      "type": "array",
+      "children": [
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Null"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Oak Wood"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Spruce Wood"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Birch Wood"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 2
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Wolly Walker Meat"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Apple"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Maple Wood"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Ghost Wood"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 4
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "children": [
+            {
+              "name": "Collected",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Name",
+              "type": "string",
+              "value": "Torch"
+            },
+            {
+              "name": "SpriteAnim",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Weight",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "fullName": "Get item name",
+      "functionType": "StringExpression",
+      "group": "Item ID",
+      "name": "GetItemName",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "ItemData[itemID].Name"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [
+        {
+          "description": "Item ID",
+          "name": "itemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Get item weight",
+      "functionType": "Expression",
+      "group": "Item ID",
+      "name": "GetItemWeight",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnNumber"
+              },
+              "parameters": [
+                "ItemData[itemID].Weight"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Item ID",
+          "name": "itemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Get item animation",
+      "functionType": "Expression",
+      "group": "Item ID",
+      "name": "GetItemAnim",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnNumber"
+              },
+              "parameters": [
+                "ItemData[itemID].SpriteAnim"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Item ID",
+          "name": "itemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "ID of object",
+      "functionType": "Condition",
+      "group": "Tag",
+      "name": "IDofObject",
+      "sentence": "_PARAM1_ has ID of _PARAM3_ from group _PARAM4_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ID",
+                "=",
+                "Object.Tag::GetObjectID()"
+              ]
+            },
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "IDGroup",
+                "=",
+                "Object.Tag::GetObjectIDGroup()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "Tag",
+          "name": "Tag",
+          "supplementaryInformation": "IDs::Tag",
+          "type": "behavior"
+        },
+        {
+          "description": "Target ID",
+          "name": "ID",
+          "type": "expression"
+        },
+        {
+          "description": "Target ID group",
+          "name": "IDGroup",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Record collection",
+      "functionType": "Action",
+      "group": "Item ID",
+      "name": "RecordCollection",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "ItemData[itemID].Collected",
+                "=",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "ItemData[itemID].Collected",
+                "True",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Item ID",
+          "name": "itemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Is item collected",
+      "functionType": "Condition",
+      "group": "Item ID",
+      "name": "ItemCollected",
+      "sentence": "Item ID _PARAM1_ collected",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "ItemData[itemID].Collected",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Item ID",
+          "name": "itemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "folderName": "Item ID",
+        "children": [
+          {
+            "functionName": "GetItemName"
+          },
+          {
+            "functionName": "RecordCollection"
+          },
+          {
+            "functionName": "ItemCollected"
+          },
+          {
+            "functionName": "GetItemWeight"
+          },
+          {
+            "functionName": "GetItemAnim"
+          }
+        ]
+      },
+      {
+        "folderName": "Tag",
+        "children": [
+          {
+            "functionName": "IDofObject"
+          }
+        ]
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [
+    {
+      "description": "Link a sprite to an item ID.",
+      "fullName": "Item Tag",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "ItemTag",
+      "objectType": "Sprite",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPostEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "ID"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "IDs::ItemTag",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "functionName": "doStepPostEvents"
+          }
+        ]
+      },
+      "propertyDescriptors": [
+        {
+          "value": "0",
+          "type": "Number",
+          "label": "Item ID",
+          "name": "ID"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "ID"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Link an object to a type of ID.",
+      "fullName": "Tag",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Tag",
+      "objectType": "",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "Get object ID",
+          "functionType": "Expression",
+          "name": "GetObjectID",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnNumber"
+                  },
+                  "parameters": [
+                    "ID"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "IDs::Tag",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Get object ID",
+          "functionType": "StringExpression",
+          "name": "GetObjectIDGroup",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "IDGroup"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "string"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "IDs::Tag",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "functionName": "GetObjectID"
+          },
+          {
+            "functionName": "GetObjectIDGroup"
+          }
+        ]
+      },
+      "propertyDescriptors": [
+        {
+          "value": "0",
+          "type": "Number",
+          "label": "Object ID",
+          "name": "ID"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "The group of the ID (For items use Item Tag behavior!)",
+          "extraInformation": [
+            "json"
+          ],
+          "choices": [],
+          "name": "IDGroup"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "ID"
+          },
+          {
+            "propertyName": "IDGroup"
+          }
+        ]
+      }
+    }
+  ],
+  "eventsBasedObjects": []
+}

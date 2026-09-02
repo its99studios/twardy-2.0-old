@@ -1,0 +1,422 @@
+{
+  "author": "",
+  "category": "Game mechanic",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Percentage Completion",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXRyb3BoeSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xOCAyQzE3LjEgMiAxNiAzIDE2IDRIOEM4IDMgNi45IDIgNiAySDJWMTFDMiAxMiAzIDEzIDQgMTNINi4yQzYuNiAxNSA3LjkgMTYuNyAxMSAxN1YxOS4wOEM4IDE5LjU0IDggMjIgOCAyMkgxNkMxNiAyMiAxNiAxOS41NCAxMyAxOS4wOFYxN0MxNi4xIDE2LjcgMTcuNCAxNSAxNy44IDEzSDIwQzIxIDEzIDIyIDEyIDIyIDExVjJIMThNNiAxMUg0VjRINlYxMU0yMCAxMUgxOFY0SDIwVjExWiIgLz48L3N2Zz4=",
+  "name": "PercentageCompletion",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/4b89b420c0ed9c540a7f00c5735a31af0db2160679d3fab2170df3681c3ac38c_trophy.svg",
+  "shortDescription": "Track game completion as a percentage.",
+  "version": "1.3.0",
+  "description": [
+    "This extension provides tracking game completion.",
+    "",
+    "High Precision: Uses an internal integer-based system to provide 1 decimal point of accuracy (0.1%) without floating-point errors.",
+    "",
+    "DLC Friendly: Supports completion beyond 100.0% for expansion content or \"True Completion\" goals.",
+    "",
+    "Clean UI Output: Includes an expression to return a perfectly formatted string (e.g., \"94.5%\") even when the value is a whole number."
+  ],
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [
+    {
+      "name": "CurrentCompletionPoints",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CollectedItems",
+      "type": "structure",
+      "children": []
+    },
+    {
+      "name": "LastCompleted",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "FinishedGame",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "fullName": "Add percentage",
+      "functionType": "Action",
+      "name": "AddPercentage",
+      "sentence": "Add _PARAM1_% to percentage completion",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentCompletionPoints",
+                "+",
+                "Percentage * 10"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Percentage",
+          "name": "Percentage",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Percentage",
+      "functionType": "Expression",
+      "name": "ProgressString",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "ToString(floor(CurrentCompletionPoints / 10)) + \".\" + ToString(mod(CurrentCompletionPoints, 10))"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Percentage reached",
+      "functionType": "Condition",
+      "name": "PercentageReached",
+      "sentence": "Percentage completion reached _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CurrentCompletionPoints",
+                ">=",
+                "Percentage"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Percentage",
+          "name": "Percentage",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Add percentage from item",
+      "functionType": "Action",
+      "name": "AddPercentageFromItem",
+      "sentence": "Add percentage from item with ID _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentCompletionPoints",
+                "+",
+                " IDs::GetItemWeight(itemID) * 10"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Item ID",
+          "name": "itemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Change current completion",
+      "functionType": "Action",
+      "name": "ChangeCurrentCompletion",
+      "sentence": "Set _PARAM1_ as current completion",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "LastCompleted",
+                "=",
+                "Completion"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Objective completed",
+          "name": "Completion",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Current completion",
+      "functionType": "Condition",
+      "name": "CurrentCompletion",
+      "sentence": "Current completion is _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "LastCompleted",
+                "=",
+                "Completion"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Objective completed",
+          "name": "Completion",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Reset current completion",
+      "functionType": "Action",
+      "name": "ResetCurrentCompletion",
+      "sentence": "Reset current completion",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "LastCompleted",
+                "=",
+                "\"\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Game completed",
+      "functionType": "Condition",
+      "name": "GameCompleted",
+      "sentence": "Game completed",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CurrentCompletionPoints",
+                ">=",
+                "1000"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "FinishedGame",
+                ">=",
+                "1000"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "FinishedGame",
+                "True",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "FinishedGame",
+                "True",
+                "100"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Change completion value",
+      "functionType": "Action",
+      "name": "ChangePercentageCompletion",
+      "sentence": "Set completion to _PARAM1_%",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentCompletionPoints",
+                "=",
+                "Completion / 100"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Pecent",
+          "name": "Completion",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "functionName": "AddPercentage"
+      },
+      {
+        "functionName": "AddPercentageFromItem"
+      },
+      {
+        "functionName": "ProgressString"
+      },
+      {
+        "functionName": "PercentageReached"
+      },
+      {
+        "functionName": "ChangeCurrentCompletion"
+      },
+      {
+        "functionName": "ChangePercentageCompletion"
+      },
+      {
+        "functionName": "ResetCurrentCompletion"
+      },
+      {
+        "functionName": "CurrentCompletion"
+      },
+      {
+        "functionName": "GameCompleted"
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

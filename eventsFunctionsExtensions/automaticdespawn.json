@@ -1,0 +1,312 @@
+{
+  "author": "",
+  "category": "Game mechanic",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Automatic Despawn",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPHBhdGggZD0iTTE2LDJDOC44LDIsMyw3LjgsMywxNC44djUuN2MwLDEuOSwxLjUsMy40LDMuNCwzLjRDNywyMy45LDgsMjQuMiw4LDI1djNjMCwwLjQsMC4zLDAuOCwwLjcsMWMyLjQsMC44LDQuOSwxLjIsNy4zLDEuMg0KCXM0LjktMC40LDcuMy0xLjJjMC40LTAuMSwwLjctMC41LDAuNy0xdi0zYzAtMC44LDEtMS4xLDEuNi0xLjFjMS45LDAsMy40LTEuNSwzLjQtMy40di01LjdDMjksNy44LDIzLjIsMiwxNiwyeiBNMTIuMywyMS43DQoJbC0xLjIsMC4yYy0wLjIsMC0wLjQsMC4xLTAuNywwLjFjLTAuOCwwLTEuNS0wLjMtMi4yLTAuOEM3LjUsMjAuNiw3LDE5LjYsNywxOC42di0wLjJjMC0xLjksMS41LTMuNCwzLjQtMy40aDEuMg0KCWMxLjEsMCwyLDAuNSwyLjcsMS4zYzAuNiwwLjgsMC45LDEuOSwwLjYsMi45QzE0LjYsMjAuNSwxMy41LDIxLjQsMTIuMywyMS43eiBNMTcuNCwyMy45QzE3LjMsMjQsMTcuMiwyNCwxNywyNA0KCWMtMC40LDAtMC43LTAuMi0wLjktMC42TDE2LDIzLjJsLTAuMSwwLjJjLTAuMiwwLjUtMC44LDAuNy0xLjMsMC40Yy0wLjUtMC4yLTAuNy0wLjgtMC40LTEuM2wxLTJjMC4zLTAuNywxLjQtMC43LDEuOCwwbDEsMg0KCUMxOC4xLDIzLDE3LjksMjMuNiwxNy40LDIzLjl6IE0yNSwxOC42YzAsMS0wLjUsMi0xLjIsMi42Yy0wLjYsMC41LTEuNCwwLjgtMi4yLDAuOGMtMC4yLDAtMC40LDAtMC43LTAuMWwtMS4yLTAuMg0KCWMtMS4zLTAuMy0yLjMtMS4yLTIuNi0yLjVjLTAuMy0xLDAtMi4xLDAuNi0yLjljMC42LTAuOCwxLjYtMS4zLDIuNy0xLjNoMS4yYzEuOSwwLDMuNCwxLjUsMy40LDMuNFYxOC42eiIvPg0KPC9zdmc+DQo=",
+  "name": "AutomaticDespawn",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/Glyphster Pack/Master/SVG/Healthcare/515d667cfaa911a991a3f9291747d8aad3619b01e77e88b2281f344af282fc10_Healthcare_medical_healthcare_skull.svg",
+  "shortDescription": "Despawn objects after a certain ammount of time.",
+  "version": "1.0.0",
+  "description": "",
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "eventsBasedBehaviors": [
+    {
+      "description": "Despawn the object after a certain amount of time",
+      "fullName": "Despawner",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Despawner",
+      "objectType": "",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "Start despawn timer",
+          "functionType": "Action",
+          "name": "StartTimer",
+          "sentence": "Start despawn timer of _PARAM0_ (allow timer reset: _PARAM2_)",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "Object",
+                    "\"Despawn\"",
+                    ">",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "AllowReset",
+                    "True",
+                    ">="
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Object",
+                    "\"Despawn\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "Object",
+                    "\"Despawn\"",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Object",
+                    "\"Despawn\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "AutomaticDespawn::Despawner",
+              "type": "behavior"
+            },
+            {
+              "description": "Allow timer reset",
+              "name": "AllowReset",
+              "type": "yesorno"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onCreated",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "WhenNotMoving",
+                    "False",
+                    ">="
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Object",
+                    "\"Despawn\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "AutomaticDespawn::Despawner",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "Despawn timer value",
+          "functionType": "Expression",
+          "name": "TimerValue",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnNumber"
+                  },
+                  "parameters": [
+                    "Object.ObjectTimerElapsedTime(\"Despawn\")"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "AutomaticDespawn::Despawner",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "Object",
+                    "\"Despawn\"",
+                    ">=",
+                    "Time"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Object",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "AutomaticDespawn::Despawner",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "functionName": "StartTimer"
+          },
+          {
+            "functionName": "TimerValue"
+          },
+          {
+            "functionName": "onCreated"
+          },
+          {
+            "functionName": "doStepPreEvents"
+          }
+        ]
+      },
+      "propertyDescriptors": [
+        {
+          "value": "30",
+          "type": "Number",
+          "unit": "Second",
+          "label": "Timer length",
+          "description": "Despawn after _ seconds",
+          "name": "Time"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Start timer when not moving",
+          "description": "If unchecked, despawn timer will start as soon as the object is created",
+          "name": "WhenNotMoving"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "Time"
+          },
+          {
+            "propertyName": "WhenNotMoving"
+          }
+        ]
+      }
+    }
+  ],
+  "eventsBasedObjects": []
+}

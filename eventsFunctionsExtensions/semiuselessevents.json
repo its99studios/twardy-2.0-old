@@ -1,0 +1,181 @@
+{
+  "author": "",
+  "category": "General",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Semi-Useless Events",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNsaXBib2FyZC1saXN0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5IDNIMTQuODJDMTQuNCAxLjg0IDEzLjMgMSAxMiAxUzkuNiAxLjg0IDkuMTggM0g1QzMuOSAzIDMgMy45IDMgNVYxOUMzIDIwLjEgMy45IDIxIDUgMjFIMTlDMjAuMSAyMSAyMSAyMC4xIDIxIDE5VjVDMjEgMy45IDIwLjEgMyAxOSAzTTcgOEg5VjEySDhWOUg3VjhNMTAgMTdWMThIN1YxNy4wOEw5IDE1SDdWMTRIOS4yNUM5LjY2IDE0IDEwIDE0LjM0IDEwIDE0Ljc1QzEwIDE0Ljk1IDkuOTIgMTUuMTQgOS43OSAxNS4yN0w4LjEyIDE3SDEwTTExIDRDMTEgMy40NSAxMS40NSAzIDEyIDNTMTMgMy40NSAxMyA0IDEyLjU1IDUgMTIgNSAxMSA0LjU1IDExIDRNMTcgMTdIMTJWMTVIMTdWMTdNMTcgMTFIMTJWOUgxN1YxMVoiIC8+PC9zdmc+",
+  "name": "SemiUselessEvents",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/eb8eb5f8a5840736c64f63b89fe7ef49f22e63c7c0d94df37f4f6b12f5fb8fd8_clipboard-list.svg",
+  "shortDescription": "A collection of semi-useless conditions and actions.",
+  "version": "1.0.0",
+  "description": "",
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "fullName": "Check existance",
+      "functionType": "Condition",
+      "group": "Existance",
+      "name": "Exists",
+      "sentence": "_PARAM1_ exists on the scene",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "Object",
+                "Object",
+                "!=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Check non-existance",
+      "functionType": "Condition",
+      "group": "Existance",
+      "name": "DoesNotExist",
+      "sentence": "_PARAM1_ does not exist on the scene",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "Object",
+                "Object",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Pick random instance for every instance",
+      "functionType": "Action",
+      "group": "Objects",
+      "name": "RandomForEveryInstance",
+      "sentence": "Pick a random _PARAM1_ for each instance of _PARAM2_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Object2",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PickRandomInstance"
+              },
+              "parameters": [
+                "",
+                "Object1"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object randomly picked",
+          "name": "Object1",
+          "type": "objectList"
+        },
+        {
+          "description": "Instance object",
+          "name": "Object2",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "folderName": "Objects",
+        "children": [
+          {
+            "functionName": "RandomForEveryInstance"
+          }
+        ]
+      },
+      {
+        "folderName": "Existance",
+        "children": [
+          {
+            "functionName": "DoesNotExist"
+          },
+          {
+            "functionName": "Exists"
+          }
+        ]
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

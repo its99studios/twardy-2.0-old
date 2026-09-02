@@ -1,0 +1,1026 @@
+{
+  "author": "",
+  "category": "Game mechanic",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Spawn Object in Range",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXZpZXctZ3JpZC1wbHVzLW91dGxpbmUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMyAyMUgxMVYxM0gzTTUgMTVIOVYxOUg1TTMgMTFIMTFWM0gzTTUgNUg5VjlINU0xMyAzVjExSDIxVjNNMTkgOUgxNVY1SDE5TTE4IDE2SDIxVjE4SDE4VjIxSDE2VjE4SDEzVjE2SDE2VjEzSDE4WiIgLz48L3N2Zz4=",
+  "name": "SpawnObjectInRange",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/8eee65b2a52bc9a3e2246d2714738b73d38a6f36b3a665ca18d80cbca67773de_view-grid-plus-outline.svg",
+  "shortDescription": "Spawn an object inside of a range (or another object).",
+  "version": "1.1.0",
+  "description": "With this extension, you can easily spawn objects inside of a random position (float or integer!) or even inside another object.",
+  "tags": [],
+  "authorIds": [
+    "MFflSitvxnNKWegXIpIyjeAf14x1"
+  ],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "description": "Spawn an object inside of another object.",
+      "fullName": "Create object in area",
+      "functionType": "Action",
+      "group": "Spawn Object in Range/Object",
+      "name": "ObjectInArea",
+      "sentence": "Create _PARAM1_ inside of _PARAM2_ (layer: _PARAM4_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Integer\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomInRange(Area.X(), Area.X() + Area.Width())",
+                "RandomInRange(Area.Y(), Area.Y() + Area.Height())",
+                "Layer"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Float\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomFloatInRange(Area.X(), Area.X() + Area.Width())",
+                "RandomFloatInRange(Area.Y(), Area.Y() + Area.Height())",
+                "Layer"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Fixed\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "Area.CenterX()",
+                "Area.CenterY()",
+                "Layer"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Spawning object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "Area",
+          "name": "Area",
+          "type": "objectList"
+        },
+        {
+          "description": "Range type",
+          "name": "RangeType",
+          "supplementaryInformation": "[\"Integer\",\"Float\",\"Fixed\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn an sprite inside of another object.",
+      "fullName": "Create sprite in area",
+      "functionType": "Action",
+      "group": "Spawn Object in Range/Sprite",
+      "name": "ObjectInAreaSprite",
+      "sentence": "Create _PARAM1_ inside of _PARAM3_ with width _PARAM4_px and height _PARAM5_px and animaion _PARAM2_ (layer: _PARAM7_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Integer\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomInRange(Area.X(), Area.X() + Area.Width())",
+                "RandomInRange(Area.Y(), Area.Y() + Area.Height())",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Object",
+                "Animation",
+                "=",
+                "Animation"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Float\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomFloatInRange(Area.X(), Area.X() + Area.Width())",
+                "RandomFloatInRange(Area.Y(), Area.Y() + Area.Height())",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Object",
+                "Animation",
+                "=",
+                "Animation"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Fixed\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "Area.CenterX()",
+                "Area.CenterY()",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Object",
+                "Animation",
+                "=",
+                "Animation"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Spawning sprite",
+          "name": "Object",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "Animation name",
+          "name": "Animation",
+          "supplementaryInformation": "objectAnimation",
+          "type": "objectAnimationName"
+        },
+        {
+          "description": "Area",
+          "name": "Area",
+          "type": "objectList"
+        },
+        {
+          "description": "Sprite width",
+          "name": "Width",
+          "type": "expression"
+        },
+        {
+          "description": "Sprite height",
+          "name": "Height",
+          "type": "expression"
+        },
+        {
+          "description": "Range type",
+          "name": "RangeType",
+          "supplementaryInformation": "[\"Integer\",\"Float\",\"Fixed\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn an sprite inside of another object.",
+      "fullName": "Create sprite in area (without animation)",
+      "functionType": "Action",
+      "group": "Spawn Object in Range/Sprite",
+      "name": "ObjectInAreaSpriteNoAnimation",
+      "sentence": "Create _PARAM1_ inside of _PARAM2_ with width _PARAM3_px and height _PARAM4_px (layer: _PARAM6_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Integer\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomInRange(Area.X(), Area.X() + Area.Width())",
+                "RandomInRange(Area.Y(), Area.Y() + Area.Height())",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Float\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomFloatInRange(Area.X(), Area.X() + Area.Width())",
+                "RandomFloatInRange(Area.Y(), Area.Y() + Area.Height())",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Fixed\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "Area.CenterX()",
+                "Area.CenterY()",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Spawning sprite",
+          "name": "Object",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "Area",
+          "name": "Area",
+          "type": "objectList"
+        },
+        {
+          "description": "Sprite width",
+          "name": "Width",
+          "type": "expression"
+        },
+        {
+          "description": "Sprite height",
+          "name": "Height",
+          "type": "expression"
+        },
+        {
+          "description": "Range type",
+          "name": "RangeType",
+          "supplementaryInformation": "[\"Integer\",\"Float\",\"Fixed\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn an object inside of a range.",
+      "fullName": "Create object in range",
+      "functionType": "Action",
+      "group": "Spawn Object in Range/Object",
+      "name": "ObjectInRange",
+      "sentence": "Create _PARAM1_ in _PARAM6_ range _PARAM2_ to _PARAM3_, _PARAM4_ to _PARAM5_ (layer: _PARAM7_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Integer\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomInRange(MinX, MaxX)",
+                "RandomInRange(MinY, MaxY)",
+                "Layer"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Float\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomFloatInRange(MinX, MaxX)",
+                "RandomFloatInRange(MinY, MaxY)",
+                "Layer"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Spawning object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "Minimum X",
+          "name": "MinX",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum X",
+          "name": "MaxX",
+          "type": "expression"
+        },
+        {
+          "description": "Minimum Y",
+          "name": "MinY",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum Y",
+          "name": "MaxY",
+          "type": "expression"
+        },
+        {
+          "description": "Range type",
+          "name": "RangeType",
+          "supplementaryInformation": "[\"Integer\",\"Float\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn an sprite inside of a range.",
+      "fullName": "Create sprite in range",
+      "functionType": "Action",
+      "group": "Spawn Object in Range/Sprite",
+      "name": "ObjectInRangeSprite",
+      "sentence": "Create _PARAM1_ in _PARAM7_ range _PARAM3_ to _PARAM4_, _PARAM5_ to _PARAM6_ with width _PARAM9_px and height _PARAM10_px with animation _PARAM2_ (layer: _PARAM8_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Integer\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomInRange(MinX, MaxX)",
+                "RandomInRange(MinY, MaxY)",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Object",
+                "Animation",
+                "=",
+                "Animation"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Float\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomFloatInRange(MinX, MaxX)",
+                "RandomFloatInRange(MinY, MaxY)",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Object",
+                "Animation",
+                "=",
+                "Animation"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Spawning object",
+          "name": "Object",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "Animation name",
+          "name": "Animation",
+          "type": "objectAnimationName"
+        },
+        {
+          "description": "Minimum X",
+          "name": "MinX",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum X",
+          "name": "MaxX",
+          "type": "expression"
+        },
+        {
+          "description": "Minimum Y",
+          "name": "MinY",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum Y",
+          "name": "MaxY",
+          "type": "expression"
+        },
+        {
+          "description": "Range type",
+          "name": "RangeType",
+          "supplementaryInformation": "[\"Integer\",\"Float\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        },
+        {
+          "description": "Object width",
+          "name": "Width",
+          "type": "expression"
+        },
+        {
+          "description": "Object height",
+          "name": "Height",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn an sprite inside of a range.",
+      "fullName": "Create sprite in range (without animation)",
+      "functionType": "Action",
+      "group": "Spawn Object in Range/Sprite",
+      "name": "ObjectInRangeSpriteNoAnimation",
+      "sentence": "Create _PARAM1_ in _PARAM6_ range _PARAM2_ to _PARAM3_, _PARAM4_ to _PARAM5_ with width _PARAM8_px and height _PARAM9_px (layer: _PARAM7_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Integer\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomInRange(MinX, MaxX)",
+                "RandomInRange(MinY, MaxY)",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "RangeType",
+                "=",
+                "\"Float\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "RandomFloatInRange(MinX, MaxX)",
+                "RandomFloatInRange(MinY, MaxY)",
+                "Layer"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "Object",
+                "Resizable",
+                "Width",
+                "Height"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Spawning object",
+          "name": "Object",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "Minimum X",
+          "name": "MinX",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum X",
+          "name": "MaxX",
+          "type": "expression"
+        },
+        {
+          "description": "Minimum Y",
+          "name": "MinY",
+          "type": "expression"
+        },
+        {
+          "description": "Maximum Y",
+          "name": "MaxY",
+          "type": "expression"
+        },
+        {
+          "description": "Range type",
+          "name": "RangeType",
+          "supplementaryInformation": "[\"Integer\",\"Float\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        },
+        {
+          "description": "Object width",
+          "name": "Width",
+          "type": "expression"
+        },
+        {
+          "description": "Object height",
+          "name": "Height",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Create multiple instances",
+      "functionType": "Action",
+      "name": "CreateMultipleObjects",
+      "sentence": "Create _PARAM4_ instances of object _PARAM1_ at position _PARAM2_;_PARAM3_ (layer: _PARAM5_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Repeat",
+          "repeatExpression": "Instances",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "XPos",
+                "YPos",
+                "Layer"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "X position",
+          "name": "XPos",
+          "type": "expression"
+        },
+        {
+          "description": "Y position",
+          "name": "YPos",
+          "type": "expression"
+        },
+        {
+          "description": "# of instances",
+          "name": "Instances",
+          "type": "expression"
+        },
+        {
+          "description": "Layer",
+          "name": "Layer",
+          "type": "layer"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "functionName": "CreateMultipleObjects"
+      },
+      {
+        "folderName": "Spawn Object in Range",
+        "children": [
+          {
+            "folderName": "Sprite",
+            "children": [
+              {
+                "functionName": "ObjectInRangeSprite"
+              },
+              {
+                "functionName": "ObjectInAreaSprite"
+              },
+              {
+                "functionName": "ObjectInRangeSpriteNoAnimation"
+              },
+              {
+                "functionName": "ObjectInAreaSpriteNoAnimation"
+              }
+            ]
+          },
+          {
+            "folderName": "Object",
+            "children": [
+              {
+                "functionName": "ObjectInArea"
+              },
+              {
+                "functionName": "ObjectInRange"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}
